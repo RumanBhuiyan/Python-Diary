@@ -4,6 +4,11 @@ numbers = [5, 4, 10, 34, 2, 9, 1]
 print('names is ', type(names))
 print('How many length ? ', len(names))
 
+# accessing & change item in list
+print('First name: ', names[0])
+names[0] = 'Bhuiyan'
+print('First name: ', names[0])
+
 print('Minimum number of the list: ', min(numbers))
 print('Maximum number of the list: ', max(numbers))
 print('Summation of numbers in the list: ', sum(numbers))
