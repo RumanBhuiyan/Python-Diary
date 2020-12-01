@@ -17,3 +17,6 @@ print('Character at position 4: ', myString[3])
 print('Characters from beginning to end: ', myString[0:])
 print('Characters from beginning to 14 index: ', myString[0:14])
 print('Printing characters from backwards : ', myString[-2])
+
+print(f'look at this {myString}')  # f for format string literals
+print('Congratulations !!'*2)
