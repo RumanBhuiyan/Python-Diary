@@ -24,3 +24,9 @@ for i in range(2, 5):  # starts from 2 & end before 5
 print()
 for i in range(2, 20, 4):  # starts from 2,increse by 4 and stop before 20
     print(i, end=" ")
+
+# enumeration
+print('\nEnumeration: ')
+# second parameter says begin from where
+for index, name in enumerate(['Ruman', 'Robiul', 'Shahadat'], 1):
+    print(index, name)
