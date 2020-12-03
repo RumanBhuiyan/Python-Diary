@@ -15,6 +15,7 @@ def myfunc(num):
 numbers = [num for num in range(1, 6)]
 doubles = [num*2 for num in numbers]
 evenNumbers = filter(myfunc, numbers)
+# filter return those item which evaluation is true,if x true return it
 oddNumbers = filter(lambda x: x % 2, numbers)
 
 print(f'Double numbers: {doubles}')
