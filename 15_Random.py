@@ -8,3 +8,6 @@ print(random.choices(names))  # select a random item from names
 print(random.sample(names, 3))  # select any 3 items from names
 random.shuffle(names)  # change the order of list
 print(names)
+
+# getting help to know details about a pre-built function
+help(random.shuffle)

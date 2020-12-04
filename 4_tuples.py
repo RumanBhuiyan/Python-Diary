@@ -10,3 +10,11 @@ print('Second item: ', names_tuple[1])
 names_tuple = names_tuple + ('sany',)
 print("After new item: ", names_tuple)
 print("converting to list: ", list(names_tuple))
+
+# tuple unpacking: == Destructuring in javascript
+nameList = [(1, 'Ruman'), (2, 'Robiul'), (3, 'Shahadat'), (4, 'Ontor')]
+for index, name in nameList:
+    print(f'{index}: {name}')
+
+for eachName in nameList:
+    print(f'{eachName[0]} : {eachName[1]}')

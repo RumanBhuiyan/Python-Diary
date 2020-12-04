@@ -30,3 +30,30 @@ print("Square of a number: ", square(num=int(input('Enter the number: '))))
 # calling function who can return many things
 print("double triple 4 times: ", returnMany(
     num=int(input('Enter the number: '))))
+
+# passing to much arguments in a function
+
+
+def printWhatever(*args):
+    print(args)
+
+
+printWhatever(1, 2, 3, 4, 5, 6, 7)
+# passing a dictionary to function
+
+
+def keepDictionary(**mydict):
+    for key in mydict.keys():
+        print(f'{key}: {mydict[key]}')
+
+
+keepDictionary(a=1, b=3, c=3)
+# another way
+
+
+def keepDictionary(**mydict):
+    for item in mydict.items():
+        print(f'{item[0]}: {item[1]}')
+
+
+keepDictionary(a=1, b=3, c=3)

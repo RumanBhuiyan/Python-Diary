@@ -30,3 +30,9 @@ print('\nEnumeration: ')
 # second parameter says begin from where
 for index, name in enumerate(['Ruman', 'Robiul', 'Shahadat'], 1):
     print(index, name)
+
+# list comprehension nested loop
+numbers = [[x*y for x in range(1, 11)]for y in range(1, 11)]
+
+print(numbers)
+print(f'length is {len(numbers)}')
