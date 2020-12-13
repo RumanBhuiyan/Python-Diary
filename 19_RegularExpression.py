@@ -1,3 +1,5 @@
+# 1.https://www.programiz.com/python-programming/regex (Its great)
+# 2. https://www.w3schools.com/python/python_regex.asp
 # importing Regular expression
 import re
 
@@ -137,4 +139,9 @@ print(x)
 txt = "8 times before 11:45 AM"
 # Check if the string has any + characters:
 x = re.findall("[+]", txt)
+print(x)
+
+line = "My name is Ruman"
+# find the string Starts with R then any characters at any times then n
+x = re.findall("[R].+[n]", line)
 print(x)
