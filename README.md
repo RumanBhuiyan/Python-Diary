@@ -107,3 +107,56 @@
           print(f'{eachName[0]} : {eachName[1]}')
 
 ```
+> ## 6. Set
+```python
+        # Set is simmillar as Mathematical set we read in mathematics
+        # sorted(list/tuple/set) ,reversed(list/tuple) pre-built functions
+        my_friends = {'a', 'b', 'c', 'd', 'e'}
+        his_friends = {'c', 'd', 'f', 'g', 'h'}
+        # union operation
+        print("All friends : ", sorted(my_friends.union(his_friends)))
+        print("All friends another way : ", my_friends | his_friends)
+        # intersection operation
+        print("Common Friends: ", my_friends.intersection(his_friends))
+        print("Common Friends: ", my_friends & his_friends)
+        # difference operation
+        print("They aren't my friends: ", his_friends.difference(my_friends))
+        print("They aren't my friends: ", his_friends - my_friends)
+
+```
+> ## 7. Function
+```python
+        # def= define function. one indentation= one tab
+        # age=22 is default value,if age value isn't sent as argument then it' printed
+        def printBio(name, age=22):
+            print(f'name is {name}')
+            print(f'age is {age}')
+
+        # function with return statement
+        def square(num):
+            return num**2
+
+        # a function that can return so many things
+        def returnMany(num):
+            return num*2, num*3, num*4
+
+        # passing to much arguments in a function
+        def printWhatever(*args):
+            print(args)
+
+
+        printWhatever(1, 2, 3, 4, 5, 6, 7)
+        
+        # passing a dictionary to function
+        def keepDictionary(**mydict):
+            for key in mydict.keys():
+                print(f'{key}: {mydict[key]}')
+
+
+        keepDictionary(a=1, b=3, c=3)
+        
+        # another way
+        def keepDictionary(**mydict):
+            for item in mydict.items():
+                print(f'{item[0]}: {item[1]}')
+```
