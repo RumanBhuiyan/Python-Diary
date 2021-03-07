@@ -124,7 +124,42 @@
         print("They aren't my friends: ", his_friends - my_friends)
 
 ```
-> ## 7. Function
+> ## 7. Dictionary
+```python
+        # dictionary in python is simmillar as object in javascript
+        myDictionary = {
+            'Ruman': 1,
+            'Robiul': 2,
+            'Shahadat': 3
+        }
+        # accessing keys,values,items of a dictionary
+        print(f'Dictionary keys: {list(myDictionary.keys())}')
+        print(f'Dictionary values: {list(myDictionary.values())}')
+        print(f'Dictionary items: {list(myDictionary.items())}')
+        # accessing individual item
+        print('First Item Value: ', str(myDictionary['Ruman']))
+        print('Second Item Value: ', str(myDictionary.get('Robiul')))
+        # changing value of any key
+        myDictionary['Shahadat'] = 43
+        print(myDictionary)
+        # adding new item to dictionary
+        myDictionary['parbez'] = 5
+        print(myDictionary)
+
+
+        def doSomething(name):
+            print(f'Hello {name}')
+
+
+        # dictionary can contatin function too
+        another = {
+            # assigning reference of doSomething function,not output after execution
+            'something': doSomething
+        }
+        another['something']('Revenger076')  # calling function right now
+
+```
+> ## 8. Function
 ```python
         # def= define function. one indentation= one tab
         # age=22 is default value,if age value isn't sent as argument then it' printed
@@ -159,4 +194,70 @@
         def keepDictionary(**mydict):
             for item in mydict.items():
                 print(f'{item[0]}: {item[1]}')
+```
+> ## 9. Conditional Statements 
+```python
+        # if-elif-else block
+        if operator in ['+', '-', '*', '/', '%']:
+            if(operator == '+'):
+                print(f"Summation is {num1+num2}")
+            elif(operator == '-'):
+                print(f"Subtraction is {num1-num2}")
+            elif(operator == '*'):
+                print(f"Product is {num1*num2}")
+            elif(operator == '/'):
+                print(f"division is {num1/num2}")
+            else:
+                print(f'Remainder is {num1%num2}')
+        else:
+            print('Enter the correct operator please!!')
+
+        # ternay operator
+        print('num1 is', 'Positive' if num1 >= 0 else 'Negative')
+```
+> ## 10. Looping 
+```python
+        # while loop
+        i = 1
+        while i < 6:
+            print(i, end=" ")  # end of i don't print a newline rather print space
+            i += 1
+
+        # for-loop
+        # type-1
+        print()  # printing a newline
+        for i in 'Ruman':
+            print(i, end=" ")
+
+        # type-2
+        print()
+        for item in ['Ruman', 'Robiul', 'Ontor', 'Shahadat']:
+            print(item, end=" ")
+
+        # type-3
+        print()
+        for i in range(5):
+            print(i, end=" ")
+
+        # type-4
+        print()
+        for i in range(2, 5):  # starts from 2 & end before 5
+            print(i, end=" ")
+
+        # type-5
+        print()
+        for i in range(2, 20, 4):  # starts from 2,increse by 4 and stop before 20
+            print(i, end=" ")
+
+        # enumeration
+        print('\nEnumeration: ')
+        # second parameter says begin from where
+        for index, name in enumerate(['Ruman', 'Robiul', 'Shahadat'], 1):
+            print(index, name)
+
+        # list comprehension nested loop
+        numbers = [[x*y for x in range(1, 11)]for y in range(1, 11)]
+
+        print(numbers)
+        print(f'length is {len(numbers)}')
 ```
