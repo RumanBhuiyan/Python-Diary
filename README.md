@@ -9,8 +9,8 @@
 ```
 > ## 2. Input 
 ```python
-    a=int(input("Enter the first Number : "))# Renders the text Enter the first number but accepts string from command line
-    b=int(input("Enter the second Number : ")) #  and make it int type then assign it
+    a=int(input("Enter the first Number : "))
+    b=int(input("Enter the second Number : ")) 
 
     print(f'Summation of two number is {a+b}')
 ```
