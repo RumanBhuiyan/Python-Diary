@@ -261,3 +261,184 @@
         print(numbers)
         print(f'length is {len(numbers)}')
 ```
+> ## 11. Try Catch Block
+```python
+        num1 = int(input('Enter first number: '))
+        num2 = int(input('Enter second number : '))
+
+        try:
+            global result  # declaring global variable result
+            result = num1 / num2
+        except:
+            result = 0
+            print('Invalid input')
+        finally:
+            print(f'Quotient is ', result)
+```
+> ## 12. Class & Object
+```python
+        # to keep class body empty use the keyword 'pass'
+        class Biodata:
+            age = 24
+            # constructor, here self is reference to Biodata class like as 'this'
+            # you can use any word instead of self here
+
+            def __init__(self, name, occupation):
+                self.name = name
+                self.occupation = occupation
+            # string representation of the class,self bind this method to object
+
+            def __str__(self):
+                return f'{self.name} is a {self.occupation}'
+            # build your own function to return anything's length
+            # thus you can build your ownkeyword to perform a task
+
+            def __len__(self):
+                return len(self.name)
+
+            def showBiodata(self):
+                print('Name : ', self.name, ' Occupation : ', self.occupation)
+
+
+        person = Biodata('Ruman', 'Engineer')
+        print('Person\'s age: ', person.age)
+        person.showBiodata()
+        print(f'String representation of the class is {str(person)}')
+        print(f'name\'s length: {len(person)}')
+```
+> ## 13. Inheritance
+```python
+        # python supports multi-class-inheritance
+        class Bird:
+            def fly(self):
+                print('It can fly')
+
+
+        # class Hen(Bird):  # inheriting Bird class
+        # calling parent class constructor : Bird.__init__() or super().__init__()
+        #     pass
+        class Hen:
+            def swim(self):
+                print('It can swim')
+
+
+        class Duck(Bird, Hen):
+            pass
+
+        print('Duck : ')
+        newDuck = Duck()
+        newDuck.fly()
+        newDuck.swim()
+```
+> ## 14. Zip & Unzip 
+```python
+        name = "Ruman"
+        data = '12345'
+
+        # if characters len not equal then extra character will gone
+
+        newDict = dict(zip(name, data))
+        print(newDict)  # {'R': '1', 'u': '2', 'm': '3', 'a': '4', 'n': '5'}
+        print(list(zip(*newDict)))  # unzip operation
+        #[('R', 'u', 'm', 'a', 'n')]
+```
+> ## 15. Lambda Function
+```python
+        # lambda function
+        def square(x): return x*x
+        def cube(x): return x*x*x
+
+
+        print(f'Square of 2: {square(2)}')
+        print(f'Cube of 2 : {cube(2)}')
+      
+        def myfunc(num):
+            return num % 2 == 0
+            
+        # list comprehension in single loop
+        numbers = [num for num in range(1, 6)]
+        doubles = [num*2 for num in numbers]
+        evenNumbers = filter(myfunc, numbers)
+        # filter return those item which evaluation is true,if x true return it
+        oddNumbers = filter(lambda x: x % 2, numbers)
+
+        print(f'Double numbers: {doubles}')
+        print(f'Even numbers: {list(evenNumbers)}')
+        print(f'Odd numbers: {list(oddNumbers)}')
+```
+> ## 16. Random Number 
+```python
+        import random
+
+        print(random.randint(1, 10))  # select a random number within 1 & 10
+        print(random.randrange(1, 10, 2))  # select a number from [1 3 5 7 9]
+
+        names = ['Ruman', 'Robiul', 'Ontor', 'Shahadat', 'Parbez']
+        print(random.choices(names))  # select a random item from names
+        print(random.sample(names, 3))  # select any 3 items from names
+        random.shuffle(names)  # change the order of list
+        print(names)
+
+        # getting help to know details about a pre-built function
+        help(random.shuffle)
+```
+> ## 17. Map & filter 
+```python
+        # map , filter functions
+        numbers = [1, 2, 3, 4, 5]
+
+        def square(num):
+            return num**2
+
+        # using map function with named function
+        squareNumbers = list(map(square, numbers))
+        print(f'Square of Numbers : {squareNumbers}')
+        # using map function with anonymous or lambda function
+        cubeNumbers = list(map((lambda num: num**3), numbers))
+        print(f'Cube of numbers: {cubeNumbers}')
+
+        def even(num):
+            return num % 2 == 0
+
+        # using filter function with named function
+        evenNumbers = list(filter(even, numbers))
+        print(f'Even Numbers: {evenNumbers}')
+        # using filter function with anonymous of lambda function
+        oddNumbers = list(filter(lambda num: num % 2, numbers))
+        print(f'Odd Numbers: {oddNumbers}')
+
+        # map function returns items performing operation on each but
+        # filter function return those item which satisfy the condition
+```
+> ## 18. Generators
+```python
+        import sys
+        # whenever a function get yield keyword it allocates 112 bytes of memory
+        # in memory  and stores value of local variable there.At the time of
+        # each iteration it calculates i**2 and return it & forgets previous i value
+
+        def sendGenerator(n):
+            for i in range(1, n):
+                yield i**2
+
+        # if you call sendGenerator(100000000)it will also take 112 bytes of memory
+        keep = sendGenerator(5)
+        print(sys.getsizeof(keep), ' bytes')
+        # you can't iterate over a generator more than once
+        # each iteration, loop sasy keep send me your next number like next(keep)
+        for num in keep:
+            print(num, end=' ')
+        # now keep is empty thats why below line will generate empty list
+        print(f'\n{list(keep)}')
+
+        # creating generator in another way
+        numbers = (x**2 for x in range(1, 5))
+        print(type(numbers))
+
+        # iteration in another way
+        myIteration = iter(numbers)
+        print(next(myIteration), end=' ')
+        print(next(myIteration), end=' ')
+        print(next(myIteration), end=' ')
+        print(next(myIteration), end=' ')
+```
