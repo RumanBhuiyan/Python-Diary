@@ -13,6 +13,25 @@
     b=int(input("Enter the second Number : ")) 
 
     print(f'Summation of two number is {a+b}')
+    
+    #taking space seperated inputs in python
+    #process : 01 using list comprehension
+    
+    numbers = input("Enter the numbers : ")
+    numbers=numbers.split() # seperating words/strings basis on space
+    numbers = [int (x) for x in numbers] # converting each string to int
+    print(numbers)
+
+    #process : 02  using map function 
+    # map(function,list) output the modified list performing function on each item of the list
+    
+    numbers=list(map(lambda x : int(x),input("Enter numbers : ").split()))
+    print(numbers)
+
+    #process : 03 using int() prebuilt function as parameter of map
+    
+    numbers =list(map(int,input("Enter numbers : ").split()))
+    print(numbers)
 ```
 > ### 3. Strings
 ```python
