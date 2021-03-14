@@ -655,3 +655,18 @@
         time.sleep(2)
         print("How are you ?")
 ```
+> ## 23. Calculating Execution time of a program
+```python
+        import time 
+
+        start=time.time() # note down the current time
+
+        j=0
+        for i in range(100000):
+            j +=1
+
+        end=time.time() # note down time right now
+
+        print(f'Difference of time in seconds : {end-start}')
+        print(f'Difference of time in miliseconds : {(end-start)*1000}')
+```
