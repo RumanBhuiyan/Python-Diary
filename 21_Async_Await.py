@@ -1,7 +1,5 @@
-
 import asyncio
 import time
-
 
 async def PrintSomething():
     print("Hello ")

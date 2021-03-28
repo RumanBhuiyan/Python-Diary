@@ -1,14 +1,11 @@
 import sys
-
 # whenever a function get yield keyword it allocates 112 bytes of memory
 # in memory  and stores value of local variable there.At the time of
 # each iteration it calculates i**2 and return it & forgets previous i value
 
-
 def sendGenerator(n):
     for i in range(1, n):
         yield i**2
-
 
 # if you call sendGenerator(100000000)it will also take 112 bytes of memory
 keep = sendGenerator(5)

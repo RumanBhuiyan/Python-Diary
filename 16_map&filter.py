@@ -1,10 +1,8 @@
 # map , filter functions
 numbers = [1, 2, 3, 4, 5]
 
-
 def square(num):
     return num**2
-
 
 # using map function with named function
 squareNumbers = list(map(square, numbers))
@@ -13,10 +11,8 @@ print(f'Square of Numbers : {squareNumbers}')
 cubeNumbers = list(map((lambda num: num**3), numbers))
 print(f'Cube of numbers: {cubeNumbers}')
 
-
 def even(num):
     return num % 2 == 0
-
 
 # using filter function with named function
 evenNumbers = list(filter(even, numbers))
