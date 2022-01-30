@@ -1,0 +1,5 @@
+root - DEBUG - DEBUG message
+root - INFO - INFO message
+root - WARNING - INFO message
+root - ERROR - INFO message
+root - CRITICAL - INFO message
