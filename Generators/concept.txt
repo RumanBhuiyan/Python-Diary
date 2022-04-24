@@ -1,0 +1,12 @@
+due to return statement, code execution flow completely comes out of that function and local varaibles of that function are deleted
+that's why if we call that function again and again then each time local varaibles are re-created. As a result function can't recall
+previous state. So if we need such a function which can preserve its state,variables in future calls then we should use generator here.
+Because when we return something by yield then functions local scoped resources aren't deleted. Rather function is executed after yield
+when that function is called again.
+
+
+when to use generator ?
+------------------------
+If you are storing data into any container like(list/set/tuple/dictionary) which may overflow and if you have the opportunity that
+you can stop traversing data at some point or in some condition then you can process those data instead of storing them then 
+you can use generator . you don't need to be worried about overflowing due to storing data into container at that time.

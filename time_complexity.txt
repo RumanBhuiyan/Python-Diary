@@ -1,0 +1,3 @@
+https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/?msclkid=58e06e85a76411ec808094f7fb2ec0eb
+
+https://wiki.python.org/moin/TimeComplexity

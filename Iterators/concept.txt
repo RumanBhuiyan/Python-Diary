@@ -1,0 +1,11 @@
+for num in numbers:
+    print num
+
+Here ,
+        numbers class is initiated
+            ⬇️
+        __iter__(self) is called to get an iterable object by python
+            ⬇️
+        __next__(self) is called by in operator to get value
+            ⬇️
+        works accordingly untill gets StopIteration

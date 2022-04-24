@@ -1,0 +1,30 @@
+let's say i want to store GPA of my students so i can use list like gpa[1], gpa[2] and its fine becuase
+random access by index in list has time complexity of O(1). but what if you students roll number start from
+10001 to 10100. In that case you wont allocate 10100 items in list just for 100 students,right ? Because 
+that will be waste of memory. Now you may think of writing a function which will convert those roll numbers like
+
+10001 -> 1
+10002 -> 2 and so on
+
+The function you are thinking about is known as hash function. So hash function takes your key as input and generate
+a numeric index so that using that index , value can be kept into hash table. Hash table is nothing but dynamic array.
+In python you may think it as a list. So if you use hash function then you can access your item in O(1) time and you dont
+have to waste any memory. How cool it is!. Pyhon dictionary uses this hash table under the hood.
+
+But there is a question you may ask that is the time complexity of adding new key in dictionary O(1) for always ?
+------------------------------------------------------------------------------------------------------------------
+No. lets say your hash function makes sum of ASCII values of all characters in the key and then mod it by 100.
+So,
+
+gpa['ABC'] -> 'ABC' = 65+66+67 mode 100 = 98
+gpa['CBA'] -> 'CBA' = 67+66+65 mode 100 = 98
+gpa['BCA'] -> 'BCA' = 66+67+65 mode 100 = 98
+
+hash function output of all of those key above will be same. That is called collision in hash table. No matter how complex your
+hash function is . No matter how unique your hash function is. There is a chance for always that collision may happend. To solve 
+those collisions few strategies are followed like :
+
+i ) Open Addressing (Searchs for first free space and keep the value there)
+ii) Seperate chaining (stores value under key as a linked list then add the new value under same key in end)
+
+So when collision will occur it will take O(n) time otherwise it will take O(1) time.
